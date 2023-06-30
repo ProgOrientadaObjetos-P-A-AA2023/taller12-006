@@ -7,11 +7,6 @@ package p2;
 
 import java.util.ArrayList;
 import p1.Matricula;
-import p1.MatriculaCampamento;
-import p1.MatriculaColegio;
-import p1.MatriculaEscuela;
-import p1.MatriculaJardin;
-import p1.MatriculaMaternal;
 
 /**
  *
