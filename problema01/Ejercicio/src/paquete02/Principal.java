@@ -7,16 +7,18 @@ package paquete02;
 
 import java.util.ArrayList;
 import paquete01.Televisor;
+import paquete03.VentasTvs;
 
 /**
  *
  * @author reroes
  */
 public class Principal {
-    
+
     public static void main(String[] args) {
-       
+
         Televisor t1 = new Televisor();
+        VentasTvs vt1 = new VentasTvs();
         t1.establecerMarca("LG-14 pulgadas");
         t1.establecerPrecio(300.2);
 
@@ -32,9 +34,11 @@ public class Principal {
         tvs.add(t1);
         tvs.add(t2);
         tvs.add(t3);
+        vt1.televisorMasCaro(tvs);
         System.out.println("-----------------");
-        System.out.printf("%.2f\n", t1.totalPrecioTvs(tvs));
-        // System.out.printf("%s\n", t1.listaMarcasVendidas(tvs));
+        System.out.printf("Total precios: %.2f\n", vt1.totalPrecioTvs(tvs));
+        System.out.printf("Lista Tvs Vendidos%s\n", vt1.listaMarcasVendidas(tvs));
+        System.out.printf("Televisor mas caro: %s\n", vt1.obtenerTelevisorMasCaro());
 
     }
 }

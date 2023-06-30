@@ -5,6 +5,8 @@
  */
 package p3;
 
+import java.util.ArrayList;
+import p1.Matricula;
 import p1.MatriculaCampamento;
 import p1.MatriculaColegio;
 import p1.MatriculaEscuela;
@@ -19,6 +21,7 @@ import p2.TipoMatricula;
 public class Principal {
     public static void main(String[] args) {
         TipoMatricula tipos = new TipoMatricula();
+        ArrayList<Matricula> lista = new ArrayList<>();
         
         MatriculaCampamento mcamp = new MatriculaCampamento();
         mcamp.establecerTarifa();
@@ -27,13 +30,27 @@ public class Principal {
         mcolegio.establecerTarifa();
         
         MatriculaEscuela mescuela = new MatriculaEscuela();
-        MatriculaJardin mjardin = new MatriculaJardin();
-        MatriculaMaternal mmaternal = new MatriculaMaternal();
-        MatriculaMaternal mmaternal2 = new MatriculaMaternal();
+        mescuela.establecerTarifa();
         
-        tipos.establecerMatriculaCampamento(mcamp);
-        tipos.establecerMatriculaColegio(mcolegio);
+        MatriculaJardin mjardin = new MatriculaJardin();
+        mjardin.establecerTarifa();
+        
+        MatriculaMaternal mmaternal = new MatriculaMaternal();
+        mmaternal.establecerTarifa();
+        
+        MatriculaMaternal mmaternal2 = new MatriculaMaternal();
+        mmaternal2.establecerTarifa();
+        
+        lista.add(mcamp);
+        lista.add(mcolegio);
+        lista.add(mescuela);
+        lista.add(mjardin);
+        lista.add(mmaternal);
+        lista.add(mmaternal2);
+        
+        tipos.establecerListaMatriculas(lista);
         tipos.establecerPromedioTarifas();
-        System.out.printf("%s\n", tipos);
+        System.out.printf("Promedio de las matriculas:%.2f\n",
+                tipos.obtenerPromedioTarifas());
     }
 }
